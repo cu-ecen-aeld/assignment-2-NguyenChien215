@@ -17,19 +17,19 @@ int main(int argc, char *argv[])
     {
         printf("Your number of inputs is wrong, please just type 2 inputs !!\n");
         syslog(LOG_ERR, "Error, Your number of inputs is wrong, please just type 2 inputs !!\n");
-        exit(1);
+        return 1;
     }
     else if(strcmp(argv[1], "") == 0)
     {
         printf("Your first input can't be empty, please type the path of .txt file here (include the .txt file in the path) !!\n");
         syslog(LOG_ERR, "Error, Your first input can't be empty, please type the path of .txt file here (include the .txt file in the path) !!\n");
-        exit(1);
+        return 1;
     }
     else if(strcmp(argv[2], "") == 0)
     {
         printf("Your second input can't be empty, pleasy type the message you want to write in the .txt file !!\n");
         syslog(LOG_ERR, "Error, Your second input can't be empty, pleasy type the message you want to write in the .txt file !!\n");
-        exit(1);
+        return 1;
     }
 
     // Open and write to the file 
@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
     {
         printf("Can not open the file. Maybe your path is not exist !!\n");
         syslog(LOG_ERR, "Error, Can not open the file. Maybe your path is not exist !!\n");
-        exit(1);
+        return 1;
     }
     else
     {
